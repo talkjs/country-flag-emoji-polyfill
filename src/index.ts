@@ -11,7 +11,7 @@ import { isEmojiSupported } from "is-emoji-supported";
  */
 export function polyfillCountryFlagEmojis(
   fontName = "Twemoji Country Flags",
-  fontUrl = "https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/TwemojiCountryFlags.woff2"
+  fontUrl = "https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2"
 ) {
   if (isEmojiSupported("😊") && !isEmojiSupported("🇨🇭")) {
     const style = document.createElement("style");
@@ -27,7 +27,7 @@ export function polyfillCountryFlagEmojis(
       src: url('${fontUrl}') format('woff2');
     }`;
     document.head.appendChild(style);
-    debugger;
+
     return true;
   }
   return false;

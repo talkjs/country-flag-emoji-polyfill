@@ -6,6 +6,12 @@ Recent Windows versions (finally) support emojis natively, but they still do not
 
 In short, if "🇨🇭" looks like "ᴄʜ" and not like a flag, then this polyfill is for you.
 
+---
+
+This module is sponsored by [TalkJS](https://talkjs.com), a Chat API with pre-built UI for web & mobile apps.
+
+[![talkjs logo](https://user-images.githubusercontent.com/703546/159268048-19871f36-90f2-409f-ad9f-af711abc8302.png)](https://talkjs.com)
+
 ## Usage
 
 ### 1. With NPM:

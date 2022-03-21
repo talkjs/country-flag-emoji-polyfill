@@ -1,5 +1,7 @@
 ## Country Flag Emoji Polyfill
 
+![screenshot of broken emojis](https://user-images.githubusercontent.com/703546/159265695-1ed79f91-2398-4e02-a38d-7aa67426d945.png)
+
 Recent Windows versions (finally) support emojis natively, but they still do not support pretty country flags. By extension, all Chromium-based browsers can't display country flag emojis natively.
 
 In short, if "🇨🇭" looks like "ᴄʜ" and not like a flag, then this polyfill is for you.

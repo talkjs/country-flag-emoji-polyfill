@@ -1,6 +1,6 @@
 {
   "name": "country-flag-emoji-polyfill",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Add country flag emojis to Chromium-based browsers on Windows",
   "repository": "https://github.com/talkjs/country-flag-emoji-polyfill",
   "author": "Egbert Teeselink",

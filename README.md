@@ -28,6 +28,21 @@ import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 polyfillCountryFlagEmojis();
 ```
 
+#### Or, just with a script tag:
+
+Thanks to the excellent [Skypack CDN](https://www.skypack.dev), you can also use this polyfill without NPM:
+
+```html
+<script type="module" defer>
+  import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+  polyfillCountryFlagEmojis();
+</script>
+```
+
+This code only works on browsers that support ES Modules, but Chromium has done so for quite a while so it should work appropriately.
+
+[See here for a full working example](https://talkjs.github.io/country-flag-emoji-polyfill/examples/no-npm/index.html) ([source](./examples/no-npm/index.html))
+
 ### 2. Update your CSS
 
 This will load a webfont called `"Twemoji Country Flags"` on relevant browsers. Next, prefix your `font-family` CSS with this font **everywhere where you want country flags to work**. Eg if your CSS currently has this:

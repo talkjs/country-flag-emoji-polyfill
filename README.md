@@ -61,9 +61,9 @@ body {
 }
 ```
 
-This is safe because the font is loaded such that the browser will only use it for country flag emojis and not for any other characters. Therefore, the browser will simply use the next font in the list for every character except country flags.
+This is safe because the font is loaded such that the browser will only use it for country flag emojis and not for any other characters (using [`unicode-range`](https://github.com/talkjs/country-flag-emoji-polyfill/blob/master/src/index.ts#L45)). Therefore, the browser will simply use the next font in the list for every character except country flags.
 
-Furthermore, browsers that have native support for country flags will not load font at all, and therefore will simply ignore it in the `font-family` list. Browsers that do not have native country flags will render country flags using "Twemoji Country Flags" and all other characters as before.
+Browsers that have native support for country flags will not load the font at all, and therefore will simply ignore it in the `font-family` list.
 
 ## API
 
@@ -71,12 +71,14 @@ Furthermore, browsers that have native support for country flags will not load f
 function polyfillCountryFlags(fontName?: string, fontUrl?: string): boolean;
 ```
 
-Injects a style element into the HEAD with a web font with country flags, iff the browser does support emojis but not country flags.
+Injects a web font with country flags if deemed necessary.
 
-- `fontName` - Override the default font name ("Twemoji Country Flags")
-- `fontUrl` - Override the font URL (defaults to a jsdeliver-hosted)
+Parameters:
 
-Returns true iff the web font was loaded (ie the browser does not support country flags, but it does support regular emojis).
+- `fontName` - (optional) Override the default font name ("Twemoji Country Flags")
+- `fontUrl` - (optional) Override the font URL (defaults to a jsdeliver-hosted)
+
+If the browser supports color emojis but not country flags, this function injects a `style` element into the HEAD with a web font with country flags, and returns `true`. Otherwise, it does nothing and returns `false`.
 
 ## Background
 
@@ -84,7 +86,7 @@ Firefox on Windows adds country flag emoji support falling back on their [Twemoj
 
 Chromium, however, apparently [does not plan to support country flags on Windows](https://bugs.chromium.org/p/chromium/issues/detail?id=1209677#c5), except if Windows itself adds it. This means that Chromium-based browsers such as Chrome, Edge and Brave won't likely support it soon either. That's a huge chunk of browser users, who will complain that other people's nice flag emojis look to them like "ᴄʜ" and not like a picture.
 
-Until either Microsoft or Google recognize how ridiculous this is, you're stick with this polyfill.
+Until either Microsoft or Google recognize how ridiculous this is, you're stuck with this polyfill.
 
 ### How it works
 
@@ -100,9 +102,9 @@ As far as I can tell, all browsers that have this problem support WOFF2 fonts, s
 
 ### How to build
 
-This might need updates if [Twemoji Mozilla](https://github.com/mozilla/twemoji-colr) gets new version - especially if new country flags are added.
+This might need updates if [Twemoji Mozilla](https://github.com/mozilla/twemoji-colr) gets a new version - especially if new country flags are added.
 
 - clone the repo
-- make sure you're on a system with bash, fonttools and curl (On my WSL, a single `apt install fonttools` was enough)
+- make sure you're on a system with bash, fonttools and curl (On my WSL/Ubuntu, a single `apt install fonttools` was enough)
 - run `npm run make-font`
 - find the new font in `dist/TwemojiCountryFlags.woff2`

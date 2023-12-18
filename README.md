@@ -4,7 +4,9 @@
 
 Recent Windows versions (finally) support emojis natively, but they still do not support pretty country flags. By extension, all Chromium-based browsers can't display country flag emojis natively.
 
-In short, if "🇨🇭" looks like "ᴄʜ" and not like a flag, then this polyfill is for you.
+In short, if "🇨🇭" looks like "ᴄʜ" and not like a flag, then this polyfill is for you. 
+
+It's 0.7kB gzipped, with zero dependencies. The font with country flags is 77kB and only downloaded when needed.
 
 ---
 
@@ -96,7 +98,7 @@ The key building block of this polyfill is a font, "Twemoji Country Flags", a su
 
 This is important, because Twemoji Mozilla is 1.5MB, which is a pretty huge hit on your app perfomance. The subset is only 78kb, which is much better.
 
-It then injects some CSS to load this font as a webfont, but only if the browser supports regular emojis and not country flags. It uses the excellent [is-emoji-supported](https://github.com/koala-interactive/is-emoji-supported) for all the heavy lifting.
+It then injects some CSS to load this font as a webfont, but only if the browser supports regular emojis and not country flags. 
 
 As far as I can tell, all browsers that have this problem support WOFF2 fonts, so I made no effort to do the usual multi-font-format `@font-face` syntax (with eg ttf and woff fonts also).
 

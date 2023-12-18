@@ -1,4 +1,4 @@
-import { isEmojiSupported } from "is-emoji-supported";
+import { supportsEmoji } from "./emoji";
 
 /**
  * Injects a style element into the HEAD with a web font with country flags,
@@ -13,7 +13,7 @@ export function polyfillCountryFlagEmojis(
   fontName = "Twemoji Country Flags",
   fontUrl = "https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2"
 ) {
-  if (isEmojiSupported("😊") && !isEmojiSupported("🇨🇭")) {
+  if (supportsEmoji("😊") && !supportsEmoji("🇨🇭")) {
     const style = document.createElement("style");
 
     // I generated the `unicode-range` below using

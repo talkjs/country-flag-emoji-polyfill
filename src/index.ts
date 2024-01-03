@@ -13,7 +13,11 @@ export function polyfillCountryFlagEmojis(
   fontName = "Twemoji Country Flags",
   fontUrl = "https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2"
 ) {
-  if (supportsEmoji("😊") && !supportsEmoji("🇨🇭")) {
+  if (
+    typeof window !== "undefined" &&
+    supportsEmoji("😊") &&
+    !supportsEmoji("🇨🇭")
+  ) {
     const style = document.createElement("style");
 
     // I generated the `unicode-range` below using

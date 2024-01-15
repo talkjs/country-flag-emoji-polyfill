@@ -18,7 +18,6 @@
     "dist"
   ],
   "scripts": {
-    "dev": "unbuild --stub",
     "build": "unbuild --minify",
     "make-font": "cd build && ./make-font.sh"
   },

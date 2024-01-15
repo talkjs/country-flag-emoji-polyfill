@@ -6,24 +6,23 @@
   "author": "Egbert Teeselink",
   "license": "MIT",
   "type": "module",
-  "source": "src/index.ts",
   "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
-  "unpkg": "./dist/index.umd.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch",
+    "dev": "unbuild --stub",
+    "build": "unbuild --minify",
     "make-font": "cd build && ./make-font.sh"
   },
   "devDependencies": {
-    "microbundle": "^0.15.1"
+    "unbuild": "^2.0.0"
   }
 }

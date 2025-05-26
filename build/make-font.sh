@@ -5,7 +5,10 @@
 
 # download latest Twemoji font
 TTF=$(mktemp -t XXXXXXXXXX.ttf)
-curl --location https://github.com/mozilla/twemoji-colr/releases/latest/download/TwemojiMozilla.ttf --output $TTF
+curl --location https://github.com/mozilla/twemoji-colr/releases/latest/download/Twemoji.Mozilla.ttf --output $TTF
+
+# Ensure that the output directory exists
+mkdir -p ../dist
 
 # strip all characters except country flags, and save to woff2.
 #

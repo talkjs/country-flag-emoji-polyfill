@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "build": "unbuild --minify",
-    "dev": "nodemon -w src -e ts -x 'npm run build'",
+    "dev": "nodemon -w src -e ts -x \"npm run build\"",
     "make-font": "cd build && ./make-font.sh"
   },
   "devDependencies": {

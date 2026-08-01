@@ -10,7 +10,8 @@
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./dist/TwemojiCountryFlags.woff2": "./dist/TwemojiCountryFlags.woff2"
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
